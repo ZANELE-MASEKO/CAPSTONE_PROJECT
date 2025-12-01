@@ -8,8 +8,20 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>
-      
+    <div class='bg-blue-500 max-w-1800px max-h-800px mx-auto flex justify-center align-center'>
+      first layer
+      <div class='bg-red-500 w-1750px max-h-750px mx-auto flex justify-center align-center'>
+        second layer
+        <div>
+            third layer
+            <div>
+              fourth layer
+              <div>
+                last layer
+              </div>
+            </div>
+        </div>
+      </div>
     </div>
   )
 }
