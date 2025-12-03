@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import React from 'react'
 import { LandingPage } from './components/LandingPage'
+import { TotalPage } from './components/TotalPage'
 
 function App() {
   const [count, setCount] = useState(0)
