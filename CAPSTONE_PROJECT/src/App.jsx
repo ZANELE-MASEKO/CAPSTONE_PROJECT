@@ -1,17 +1,22 @@
 import { useState } from 'react'
 import './App.css'
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { LandingPage } from './components/LandingPage'
 import { TotalPage } from './components/TotalPage'
+import { QuizPage } from './components/QuizPage'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div class=' bg-white-500 flex justify-center text-center align-cneter'>
-      <LandingPage/>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/total" element={<TotalPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

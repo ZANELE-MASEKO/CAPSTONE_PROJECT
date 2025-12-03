@@ -1,6 +1,10 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom'
 
 export function LandingPage() {
+
+  const navigate= useNavigate();
+
   return (
     <div className='bg-[#00008B] w-screen h-screen mx-auto flex-grid justify-center items-center flex'>
 
@@ -39,7 +43,10 @@ export function LandingPage() {
                             </select>
                         </div>
                        </div>
-                       <button className='bg-white rounded-xl w-30 h-10 text-center font-bold text-normal hover:bg-[#78cdf5]'>lets Go!!</button>
+
+                       
+                       <button className='bg-white rounded-xl w-30 h-10 text-center font-bold text-normal hover:bg-[#78cdf5]' onClick={() => navigate('/quiz')}>lets Go!!</button>
+                       
                        
                     </div>
 
