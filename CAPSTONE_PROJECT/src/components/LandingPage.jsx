@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
+import fetchUser from './UserName';
 
 export function LandingPage() {
 
   const navigate= useNavigate();
+
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div className='bg-[#00008B] w-screen h-screen mx-auto flex-grid justify-center items-center flex'>
@@ -18,7 +21,14 @@ export function LandingPage() {
 
                        <p className='mt-10 text-xl font-sans mb-[-14px]'>Enter your name:</p>
                     
-                       <input type="text" className='bg-white w-80 rounded-xl p-3' placeholder='Enter your name:'/>
+                       <input type="text" className='bg-white w-80 rounded-xl p-3' placeholder='Enter your name:' required id='username' autoComplete='off'/>
+
+                       <p id='userError' style={{display:'none'}}></p>
+
+                       <button className='bg-white rounded-xl w-20 h-6 text-center font-bold text-normal hover:bg-[#78cdf5]' id='done' onClick={fetchUser}>
+                        Done</button>
+
+                       <p id='welcomeMessage' style={{display:'none'}}></p>
                        
                        <div className='w-150 h-30 flex justify-center items-center flex-row justify-evenly rounded-xl gap-30 '>
 
