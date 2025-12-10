@@ -3,6 +3,7 @@ async function fetchUser() {
      const UserName= document.getElementById('username').value.toLowerCase();
 
     const errorDisplay =document.getElementById('userError');
+    const userComplete= document.getElementById('done');
 
     const message_duration= 5000;
 
@@ -21,6 +22,8 @@ async function fetchUser() {
         const welcome= document.getElementById('welcomeMessage');
         welcome.textContent= `Welcome ${UserName}`;
         welcome.style.display='block'
+        welcome.style.fontSize='24px'
+        userComplete.style.display='none';
 
     }
     catch(error){

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
 import fetchUser from './UserName';
+import fecthdata from './trivia';
 
 export function LandingPage() {
 
@@ -14,7 +15,7 @@ export function LandingPage() {
       <div className='bg-[#0000CD] w-300 h-170 mx-auto rounded-xl flex flex-grid justify-center items-center'> 
    
                     <div className='bg-[#00BFFF] w-250 h-150 mx-auto rounded-xl flex flex-col justify-evenly items-center pt-5 pb-5'>
-                       <h1 className='text-xl font-bold font-sans'>Welcome! <br />
+                       <h1 className='text-xl font-bold font-sans text-center'>Welcome! <br />
                           Take a quiz to test your general knowledge.
                           Are you up for the challenge?
                         </h1>
@@ -28,9 +29,9 @@ export function LandingPage() {
                        <button className='bg-white rounded-xl w-20 h-6 text-center font-bold text-normal hover:bg-[#78cdf5]' id='done' onClick={fetchUser}>
                         Done</button>
 
-                       <p id='welcomeMessage' style={{display:'none'}}></p>
+                       <p id='welcomeMessage' style={{display:'none'}} className='text-l'></p>
                        
-                       <div className='w-150 h-30 flex justify-center items-center flex-row justify-evenly rounded-xl gap-30 '>
+                       <div className='w-200 h-30 flex justify-center items-center flex-row justify-evenly rounded-xl gap-25 '>
 
                         <div>
                             <label className='bg-white w-50 h-6 flex justify-center items-center rounded-tl-[10px] rounded-tr-[10px]'
@@ -40,6 +41,17 @@ export function LandingPage() {
                               <option value="">1</option>
                               <option value="">1</option>
                               <option value="">1</option>
+                            </select>
+                        </div>
+
+                         <div>
+                            <label className='bg-white w-50 h-6 flex justify-center items-center rounded-tl-[10px] rounded-tr-[10px]'
+                            >Difficulty</label>
+
+                            <select className='bg-white w-50 h-6 rounded-bl-[10px] rounded-br-[10px] hover:bg-[#78cdf5]'>
+                              <option value="">Easy</option>
+                              <option value="">Medium</option>
+                              <option value="">Hard</option>
                             </select>
                         </div>
 
