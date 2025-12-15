@@ -5,7 +5,7 @@ import App from './App.jsx'
 import React from 'react'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  //remove strict mode so that the api isnt resctrivted to only load twice
     <App />
-  </StrictMode>,
+
 )
