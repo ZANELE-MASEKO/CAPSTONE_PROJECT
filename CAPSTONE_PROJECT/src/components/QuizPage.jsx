@@ -89,9 +89,9 @@ export function QuizPage() {
                             {showScore ? (
                                 //if shwoScorore is true, final score will be displayed
                                 <div>
-                                    <h2>Your Total is: {score}/{questions.length}</h2>
+                                    <h2 className='font-bold text-xl'>Your Total is: {score}/{questions.length}</h2>
                                     <button
-                                    className='play-agin'
+                                    className='font-bold text-xl'
                                     onClick={handlePlayAgainClick}>Play Again</button>
                                 </div>
                             ): (
