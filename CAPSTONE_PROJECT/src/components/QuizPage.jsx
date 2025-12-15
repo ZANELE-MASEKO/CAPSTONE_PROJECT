@@ -1,6 +1,7 @@
-import React, { use }  from "react";
+import React from "react";
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
+import Answers from "./Answers.jsx";
 
 
 export function QuizPage() {
@@ -23,12 +24,7 @@ export function QuizPage() {
     const fetchQuestions = async() => {
 
         try{
-        const respone = await fetch('https://quizapi.io/api/v1/questions?limit=10&category=code', 
-             {
-            headers:{
-                'X-Api-KEY':'6YkxXAoPuHIBMOcs7tbW6WYbRbzTEbUW0CaPaDuo'
-            }
-        }
+        const respone = await fetch('https://opentdb.com/api.php?amount=10&category=18&type=multiple' 
         );
 
 
@@ -40,7 +36,7 @@ export function QuizPage() {
         const apiData= await respone.json();
         console.log(apiData);
         //all fetched questions from the api will be store in questions var
-        setQuestions(apiData);
+        setQuestions(apiData.results);
         }
         catch(error){
             console.log(error);
@@ -90,7 +86,6 @@ export function QuizPage() {
                         <div className='bg-[#00BFFF]  w-200 h-100 mx-auto rounded-xl flex justify-center items-center flex-col mt-50 justify-evenly'>
                             <h1 className='text-xl font-bold font-sans'>General Knowledge</h1>
 
-                            <hr/>
                             {showScore ? (
                                 //if shwoScorore is true, final score will be displayed
                                 <div>
@@ -101,7 +96,8 @@ export function QuizPage() {
                                 </div>
                             ): (
                                 //else, the question screen will be displayed
-                                <div >
+                                < >
+
                                     <div className='question-section flex flex-col justify-center items-center gap-5'>
                                         <div className='question-count'>
                                             <span>{currentQuestion +1}</span>/{questions.length}
@@ -111,22 +107,28 @@ export function QuizPage() {
                                             {questions[currentQuestion]?.question}
                                         </div>
 
+                                        <Answers 
+                                        questions={questions}
+                                        currentQuestions={currentQuestion}
+                                        handleAnswerOptionClick={handleAnswerOptionClick}
+                                        />
+
                                         {/*next and previous buttons*/}
                                         <div className="flex gap-10">
                                            {currentQuestion && (<button onClick={() =>setCurrentQuestion (currentQuestion-1)} className='bg-white rounded-xl w-30 h-10 text-center font-bold text-normal'>Previous</button>)} 
                                            
-                                           {currentQuestion <questions.length && (<button onClick={() =>setCurrentQuestion (currentQuestion+1)} className='bg-white rounded-xl w-30 h-10 text-center font-bold text-normal'>Next</button>)} 
+                                           {currentQuestion <questions.length - 1 && (<button onClick={() =>setCurrentQuestion (currentQuestion+1)} className='bg-white rounded-xl w-30 h-10 text-center font-bold text-normal'>Next</button>)} 
                                         </div>
 
                                     </div>
-                                </div>
+                                </>
                             )
 
                             }
 
                             
-                            <button className='bg-white rounded-xl w-30 h-10 text-center font-bold text-normal' onClick={() => navigate('/total')}>
-                                Next</button>
+                            {/*<button className='bg-white rounded-xl w-30 h-10 text-center font-bold text-normal' onClick={() => navigate('/total')}>
+                                Next</button>*/}
                             
                         </div>
 
