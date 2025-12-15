@@ -7,7 +7,23 @@ export function LandingPage() {
 
   const navigate= useNavigate();
 
-  const [isVisible, setIsVisible] = useState(false);
+/*quiz topics available
+const categories = [
+  {id:1, name: 'sport'},
+  {id:2,name:'history'},
+  {id:3,name:'geography'}, 
+  {id:4,name:'animals'}
+];*/
+
+/*const startQuiz= () => {
+  if (!selectedCategory) {
+    alert('Choose a valid topic')
+    return;
+  }
+  navigate(`/QuizPage/${selectedCategory}`);
+}
+
+const [selectedCategory, setSelectedCategory]= useState('');*/
 
   return (
     <div className='bg-[#00008B] w-screen h-screen mx-auto flex-grid justify-center items-center flex'>
@@ -33,37 +49,7 @@ export function LandingPage() {
                        
                        <div className='w-200 h-30 flex justify-center items-center flex-row justify-evenly rounded-xl gap-25 '>
 
-                        <div>
-                            <label className='bg-white w-50 h-6 flex justify-center items-center rounded-tl-[10px] rounded-tr-[10px]'
-                            >Choose Topic</label>
 
-                            <select className='bg-white w-50 h-6 rounded-bl-[10px] rounded-br-[10px] hover:bg-[#78cdf5]'>
-                              <option value="">1</option>
-                              <option value="">1</option>
-                              <option value="">1</option>
-                            </select>
-                        </div>
-
-                         <div>
-                            <label className='bg-white w-50 h-6 flex justify-center items-center rounded-tl-[10px] rounded-tr-[10px]'
-                            >Difficulty</label>
-
-                            <select className='bg-white w-50 h-6 rounded-bl-[10px] rounded-br-[10px] hover:bg-[#78cdf5]'>
-                              <option value="">Easy</option>
-                              <option value="">Medium</option>
-                              <option value="">Hard</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label className='bg-white w-50 h-6 flex justify-center items-center rounded-tl-[10px] rounded-tr-[10px]'
-                            >No Questions</label>
-                            <select className='bg-white w-50 h-6 rounded-bl-[10px] rounded-br-[10px] hover:bg-[#78cdf5]'>
-                              <option value="">1</option>
-                              <option value="">1</option>
-                              <option value="">1</option>
-                            </select>
-                        </div>
                        </div>
 
                        
