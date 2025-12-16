@@ -20,7 +20,7 @@ async function fetchUser() {
             throw new Error('Enter your name:')
         }
         const welcome= document.getElementById('welcomeMessage');
-        welcome.textContent= `Welcome ${UserName}`;
+        welcome.textContent= `Welcome ${UserName}. Are ready to test your knowledge!`;
         welcome.style.display='block'
         welcome.style.fontSize='24px'
         userComplete.style.display='none';
