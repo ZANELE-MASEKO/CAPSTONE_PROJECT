@@ -45,12 +45,8 @@ const [selectedCategory, setSelectedCategory]= useState('');*/
                        <button className='bg-white rounded-xl w-20 h-6 text-center font-bold text-normal hover:bg-[#78cdf5]' id='done' onClick={fetchUser}>
                         Done</button>
 
-                       <p id='welcomeMessage' style={{display:'none'}} className='text-l'></p>
-                       
-                       <div className='w-200 h-30 flex justify-center items-center flex-row justify-evenly rounded-xl gap-25 '>
-
-
-                       </div>
+                       <p id='welcomeMessage' style={{display:'none'}} className='text-xl'></p>
+              
 
                        
                        <button className='bg-white rounded-xl w-30 h-10 text-center font-bold text-normal hover:bg-[#78cdf5]' onClick={() => navigate('/quiz')}>lets Go!!</button>
