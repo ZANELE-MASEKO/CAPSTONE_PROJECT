@@ -1,16 +1,11 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+My name is Zanele Maseko and this is my capstone project.
+I have chosen to build a basic quiz app with react.
+I utilise basic htm, tailwindcss, javascript and react+vite to make my project come to life.
+It uses an api from OpenTriviaDatabase to fetch questions and display the question on the UI along with multiple choice
+answers and keeps track of your score for the end of the quiz. 
+The lapnging page diplaays a welcome message with the users name and an error message if they have left the input black, from there 
+there is a button that links to the quiz page(main page).
+I have  also added a dark mode that turns the background black and text gray or white.
+It took me 3 weeks of constant building along with countless trial and error and having to re-learn or learn new concepts.
+I can proudly say that i build this project from the ground up. I had no base code or blue print. I had to use my own knowledge, creativity 
+and the skills i learnt during the 14 weeks or mini projects at alx.
