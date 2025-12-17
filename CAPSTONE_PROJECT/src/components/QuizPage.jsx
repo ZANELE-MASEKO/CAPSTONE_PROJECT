@@ -4,11 +4,12 @@ import {useEffect, useState} from "react";
 import Answers from "./Answers.jsx";
 
 
-
 export function QuizPage() {
 
     const navigate= useNavigate();
     /*const {categoriesId}= useParams();*/
+
+   
 
 
     //state management for quiz questions
@@ -27,7 +28,7 @@ export function QuizPage() {
     const fetchQuestions = async() => {
 
         try{
-        const respone = await fetch('https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple' 
+        const respone = await fetch('https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple'
         );
 
 
@@ -48,8 +49,8 @@ export function QuizPage() {
 
     //this will looad th questions once the componnet is live/active
     useEffect(() => {
-        fetchQuestions();
-
+            fetchQuestions();
+        
     }, []);
 
     const handleAnswerOptionClick= (isCorrect,answer) => {

@@ -7,24 +7,16 @@ import DarkMode from './DarkMode';
 export function LandingPage() {
 
   const navigate= useNavigate();
+  //choosing quiz catgories
+  const [category,setCategory]= useState('');
 
-/*quiz topics available
+  
 const categories = [
-  {id:1, name: 'sport'},
-  {id:2,name:'history'},
-  {id:3,name:'geography'}, 
+  {id:21, name: 'sports'},
+  {id:23,name:'history'},
+  {id:22,name:'geography'}, 
   {id:4,name:'animals'}
-];*/
-
-/*const startQuiz= () => {
-  if (!selectedCategory) {
-    alert('Choose a valid topic')
-    return;
-  }
-  navigate(`/QuizPage/${selectedCategory}`);
-}
-
-const [selectedCategory, setSelectedCategory]= useState('');*/
+];
 
   return (
     <div className='bg-[#00008B] w-screen h-screen mx-auto flex-grid justify-center items-center flex' id='light-gray'>
@@ -53,6 +45,24 @@ const [selectedCategory, setSelectedCategory]= useState('');*/
                         Done</button>
 
                        <p id='welcomeMessage' style={{display:'none'}} className='text-xl'></p>
+
+                      <div className='flex flex-row gap-10'>
+                        <label>Choose category:</label>
+
+                       <select
+                          value={category}
+                          onChange={(e) => setCategory(e.target.value)}
+                        >
+                          <option value="">Select category</option>
+
+                          {categories.map(cat => (
+                            <option key={cat.id} value={cat.id}>
+                              {cat.name}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                       
               
 
                        
