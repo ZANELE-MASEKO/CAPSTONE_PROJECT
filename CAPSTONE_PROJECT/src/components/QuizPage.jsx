@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import Answers from "./Answers.jsx";
 
 
+
 export function QuizPage() {
 
     const navigate= useNavigate();
@@ -78,16 +79,22 @@ export function QuizPage() {
 
 
     return(
-        <div className='bg-[#00008B] w-screen h-screen mx-auto flex justify-center items-center flex-grid'>
+        <div className='bg-[#00008B] w-screen h-screen mx-auto flex justify-center items-center flex-grid'
+        id='light-gray'>
 
             <div className='bg-[#0000CD] w-300 h-170 mx-auto rounded-xl flex justify-center items-center flex-grid'>
                 
                 <div className='bg-[#4169E1] w-250 h-150 mx-auto rounded-xl'>
 
-                    <div className='bg-[#1E9OFF]  w-200 h-100 mx-auto rounded-xl flex justify-center items-center flex-grid'>
+                    <div className='bg-[#1E9OFF]  w-200 h-100 mx-auto rounded-xl flex justify-center items-center flex-grid'
+                    id='dark-gray'>
 
-                        <div className='bg-[#00BFFF]  w-200 h-100 mx-auto rounded-xl flex justify-center items-center flex-col mt-50 justify-evenly'>
-                            <h1 className='text-xl font-bold font-sans'>General Knowledge</h1>
+
+                        <div className='bg-[#00BFFF]  w-200 h-100 mx-auto rounded-xl flex justify-center items-center flex-col mt-50 justify-evenly'
+                        id='solid-black'>
+
+                            <h1 className='text-xl font-bold font-sans'
+                            id='content'>General Knowledge</h1>
 
                             {showScore ? (
                                 //if shwoScorore is true, final score will be displayed
@@ -114,7 +121,7 @@ export function QuizPage() {
                                         questions={questions}
                                         currentQuestions={currentQuestion}
                                         handleAnswerOptionClick={handleAnswerOptionClick}
-                                        />
+                                        id='enter-name'/>
 
                                         {/*next and previous buttons*/}
                                         <div className="flex gap-10">
