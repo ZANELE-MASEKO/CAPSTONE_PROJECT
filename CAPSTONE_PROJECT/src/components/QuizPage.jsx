@@ -2,6 +2,7 @@ import React from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import Answers from "./Answers.jsx";
+import QuizDarkMode from "./QuizDarkMode.js";
 
 
 export function QuizPage() {
@@ -109,13 +110,15 @@ export function QuizPage() {
 
                     <div className='bg-[#1E9OFF]  w-200 h-100 mx-auto rounded-xl flex justify-center items-center flex-grid'
                     id='dark-gray'>
-
+                        
+                        <button className='bg-white rounded-xl w-25 h-8 text-center font-bold text-normal text-black hover:bg-black hover:text-white  absolute top-[50px] right-[110px] ' id='darkmode'
+                        onClick={QuizDarkMode}>Darkmode</button>
 
                         <div className='bg-[#00BFFF]  w-200 h-100 mx-auto rounded-xl flex justify-center items-center flex-col mt-50 justify-evenly'
                         id='solid-black'>
 
                             <h1 className='text-xl font-bold font-sans'
-                            id='content'>General Knowledge</h1>
+                            id='main-heading'>General Knowledge</h1>
 
                             {showScore ? (
                                 //if shwoScorore is true, final score will be displayed
@@ -123,7 +126,7 @@ export function QuizPage() {
                                     <h2 className='font-bold text-xl'>Your Total is: {score}/{questions.length}</h2>
                                     <button
                                     className='font-bold text-xl'
-                                    onClick={handlePlayAgainClick}>Play Again</button>
+                                    onClick={handlePlayAgainClick}id='play-again'>Play Again</button>
                                 </div>
                             ): (
                                 //else, the question screen will be displayed
@@ -142,8 +145,10 @@ export function QuizPage() {
   </span>
 </div>
 
-                                        <div className="question-text">
+                                        <div 
+                                        id='question'className="question-text">
                                             {questions[currentQuestion]?.question}
+                                            
                                         </div>
 
                                         <Answers 
