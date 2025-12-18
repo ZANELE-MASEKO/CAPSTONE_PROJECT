@@ -23,6 +23,9 @@ export function QuizPage() {
     const [score, setScore]= useState(0);
     //var keeps trach of selected answer by user
     const [selectedAnswer, setSelectedAnswer]= useState([]);
+    //quiz timer
+    const quizTimer= 180; //quiz will take 3 mins
+    const [quizTimeLeft, setQuizTimeLeft] = useState(quizTimer)
 
     //api questions
     const fetchQuestions = async() => {
@@ -48,10 +51,26 @@ export function QuizPage() {
     }
 
     //this will looad th questions once the componnet is live/active
+
     useEffect(() => {
-            fetchQuestions();
-        
-    }, []);
+        fetchQuestions();
+        }, []);
+
+   useEffect(() => {
+  if (showScore) return;
+
+  if (quizTimeLeft === 0) {
+    setShowScore(true);
+    return;
+  }
+
+  const timer = setInterval(() => {
+    setQuizTimeLeft((prev) => prev - 1);
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, [quizTimeLeft, showScore]);
+
 
     const handleAnswerOptionClick= (isCorrect,answer) => {
         //isCorrect is a boolean value, if its true the score gets increased by 1
@@ -76,6 +95,7 @@ export function QuizPage() {
         setScore(0);
         setShowScore(false);
         setSelectedAnswer([]);
+        setQuizTimeLeft(quizTimer);
     }
 
 
@@ -113,6 +133,14 @@ export function QuizPage() {
                                         <div className='question-count'>
                                             <span>{currentQuestion +1}</span>/{questions.length}
                                         </div>
+
+                                        <div className="text-white font-bold text-lg">
+  Time Remaining:{" "}
+  <span className={quizTimeLeft <= 20 ? "text-red-500" : ""}>
+    {Math.floor(quizTimeLeft / 60)}:
+    {(quizTimeLeft % 60).toString().padStart(2, "0")}
+  </span>
+</div>
 
                                         <div className="question-text">
                                             {questions[currentQuestion]?.question}
